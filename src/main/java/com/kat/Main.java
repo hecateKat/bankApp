@@ -1,12 +1,18 @@
 package com.kat;
 
+import com.kat.entity.Account;
+import com.kat.entity.Checking;
+import com.kat.entity.Savings;
 import com.kat.utilities.CSV;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        List<Account> accounts = new LinkedList<>();
 
         String file = "C:\\Users\\Kat\\IdeaProjects\\bankApp\\NewBankAccounts.csv";
 
@@ -25,13 +31,18 @@ public class Main {
             System.out.println("----------");
 
             if (accountType.equals("Savings")){
-                System.out.println("Open a savings account");
+                accounts.add(new Savings(name, sSN, initDeposit));
             }else if (accountType.equals("Checking")){
-                System.out.println("Open a checking account");
+                accounts.add(new Checking(name, sSN, initDeposit));
             }else {
                 System.out.println("Error - wrong account type");
             }
 
+        }
+
+        for (Account acc : accounts) {
+            System.out.println("\n-------------------");
+            acc.showInfo();
         }
 
     }

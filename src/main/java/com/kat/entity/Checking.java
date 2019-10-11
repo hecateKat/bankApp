@@ -8,6 +8,7 @@ public class Checking extends Account {
     public Checking(String name, String sSN, double initDeposit) {
         super(name, sSN, initDeposit);
         accNo = "2" + accNo;
+        setdebitCardInfo();
     }
 
     private void setdebitCardInfo() {
