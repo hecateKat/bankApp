@@ -29,5 +29,11 @@ public abstract class Account implements BaseRate {
         return last2SSN + uniqueId + randNo;
     }
 
+    public void showInfo() {
+        System.out.println("Name: " + name +
+                "\nAccount NO: " + accNo +
+                "\nBallance: " + balance);
+    }
+
 
 }

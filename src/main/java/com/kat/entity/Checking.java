@@ -11,5 +11,12 @@ public class Checking extends Account {
         super(name, sSN, initDeposit);
         accNo = "2" + accNo;
     }
+
+
+    public void showInfo () {
+        super.showInfo();
+        System.out.println("Account type: Checking");
+    }
+
 }
 
